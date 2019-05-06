@@ -129,6 +129,8 @@ connect(
 
 废话不说，上图
 
+![image](https://github.com/qiangran/react-redux-intro/blob/master/docs/images/02.jpg?raw=true)
+
 
 这是一个很常见的“输入框校验”需求，根据用户输入的数字，判断是否符合要求(输入必须为1000的整数倍)，给予相应的文字提示。
 

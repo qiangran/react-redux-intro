@@ -25,7 +25,7 @@
   value2:’任意值，根据需求，可以定义多个’，
 }
 ```
-**（看，没有任何复杂的东西，请务必记住action的结构，一般通过action创建函数来创建action,具体后面再聊）**
+**（看，没有任何复杂的东西，请务必记住action的结构，一般通过action创建函数来创建action,具体后面会聊）**
 ###  reducer 是什么？
 一个纯函数,接收旧的 state 和 action，返回新的 state。
 
@@ -35,11 +35,9 @@
 
 previousState:旧的state
 action:上面定义的action
-newState:新的的state
+newState:新的state
 
 ```
-**（关注下reducer结构）**
-
 注意：
 官方文档特别强调，要保持 reducer 纯净。永远不要在 reducer 里做这些操作：
 
@@ -62,14 +60,17 @@ function todoApp(state, action) {
 }
 
 ```
+
 ###  store 是什么？
-它由Redux提供的 createStore(reducer， ?defaultState) 方法生成，拥有以下方法
+它由Redux提供的 createStore(reducer， defaultState？) 方法生成，拥有以下方法
 
 ```
 getState() 获取全局 state，类似一个类中的get方法
-dispatch(action) 更新指定的 state，这是唯一能改变store中数据的方式，类似类中的set方法
+dispatch(action) 更新指定的 state，当执行该方法时候，redux会自动调用
+reducer函数，这是唯一能改变store中数据的方式，
 subscribe(listener) 注册监听器，store发生变化的时候被调用
 subscribe(listener) 返回的函数注销监听器
+
 ```
 
 ### 如何让action ,reducer,store“三驾车”启动起来
@@ -77,7 +78,7 @@ subscribe(listener) 返回的函数注销监听器
 直接上图
 
 
-![redux理解图](https://reactjs.org/docs/getting-started.html)
+![image](https://github.com/qiangran/react-redux-intro/blob/master/docs/images/01.jpg?raw=true)
 
 store集中存储了应用中所有的state（一个大大的对象树），这些state的修改的快照，通过有规范的action对象来描述。然后编写专门的函数来决定每个 action 如何改变应用的 state，这个函数被叫做 reducer。
 
@@ -90,7 +91,7 @@ import { createStore } from 'redux';
 
 /**
  * 这是一个 reducer，形式为 (state, action) => state 的纯函数。
- * 描述了 action 如何把 state 转变成下一个 state。
+ * 描述了 action 如何把 state 转变成一个新的 state。
  *
  * state 的形式取决于你，可以是基本类型、数组、对象、惟一的要点是
  * 当 state 变化时需要返回全新的对象，而不是修改传入的参数。
