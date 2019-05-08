@@ -1,4 +1,4 @@
-#react-redux--搭配react
+##react-redux--搭配react
 
 先熟悉两个方法(大概浏览下即可，根据后面的例子对照学习)
 bindActionCreator(actionCreators, dispatch)
@@ -74,8 +74,9 @@ const mapStateToProps = (state, ownProps) => ({
 ```
 ##### mapDispatchToProps?: Object | (dispatch, ownProps?) => Object
 * mapDispatchToProps用于建立组件跟store.dispatch的映射关系
-* 作为一个函数，它可以传入一个对象或者两个参数(dispatch, ownProps?) ，结果一定要返回一个object
-* 如果mapDispatchToProps是一个函数,调用时最多使用两个参数。
+* 它可以是一个对象或者是带有两个参数(dispatch, ownProps?)的函数 ，结果一定要返回一个object
+
+* 如果mapDispatchToProps是一个函数,调用时最多使用两个参数，如下
 
 ```
 一个参数
@@ -136,12 +137,12 @@ connect(
 
 下面我们就使用react-redux来处理这个需求吧~~
 
-* 1 动手写代码之前，先考虑下有哪些state 
+* 动手写代码之前，先考虑下有哪些state 
 
 ```
 	“错误信息提示” -errorMsg
 ```
-* 2 各个state有哪些操作可以修改
+* 各个state有哪些操作可以修改
 
 ```
   	既是考虑下action的type的取值
@@ -163,8 +164,7 @@ showMinMsg(errorMsg){
 }
  
 --------------------------
-//上面两个action都是对一个state的描述，操作类型相似，我们可以通过“action创建函
-//数”改写吗，如下
+//上面两个action都是对一个state的描述，操作类型相似，我们可以通过“action创建函数”改写：
 changeErrorMsg(errorMsg){
 	return {
 		type:"CHANGE_ERROR_MESSAGE",
@@ -203,9 +203,9 @@ changeErrorMsg(errorMsg){
     
     render () {
         return (
-        <div>
-           {this.props.errorMsg } 
-        </div>
+	        <div>
+	           {this.props.errorMsg } 
+	        </div>
         )
     }
 }
@@ -279,7 +279,7 @@ document.getElementById('root'));
  
 ```
 
- 
+ 下一章 react-redux--异步Action
 
  
 

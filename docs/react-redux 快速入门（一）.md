@@ -1,4 +1,5 @@
-#react-redux--redux浅识
+##react-redux--redux浅识
+
 看完reudx官网文章之后，有一种“憋闷”的感觉，这种感觉来自“我已经反复阅读了相关文档，但是实践到具体项目的时候，还是不会”，本系列文章旨在扫除这种障碍，能够让你简单上手使用。
 在这里，我们假设你已经有丰富的react开发经验。如果没有,建议先阅读官方文档[ react documentation](https://reactjs.org/docs/getting-started.html)。
 
@@ -72,16 +73,17 @@ subscribe(listener) 注册监听器，store发生变化的时候被调用
 subscribe(listener) 返回的函数注销监听器
 
 ```
+到这里，我们知道：
+
+store集中存储了应用中所有的state（一个大大的对象树），这些state的修改的快照，通
+过有规范的action对象来描述。然后编写专门的函数来决定每个 action 如何改变应用的 state，这个函数被叫做 reducer。
 
 ### 如何让action ,reducer,store“三驾车”启动起来
-
 直接上图
-
 
 ![image](https://github.com/qiangran/react-redux-intro/blob/master/docs/images/01.jpg?raw=true)
 
-store集中存储了应用中所有的state（一个大大的对象树），这些state的修改的快照，通过有规范的action对象来描述。然后编写专门的函数来决定每个 action 如何改变应用的 state，这个函数被叫做 reducer。
-
+当调用store.dispath(action)方法时，redux会主动触发对应的reducer执行，从而得到新的state,state发生变化，store.subscribe()又会被调用，于是我们可以在这个方法中做UI重绘，或者通过store.getState()获取全新的state，以便后续使用。
 就是这样！
 
 结合官网的例子
