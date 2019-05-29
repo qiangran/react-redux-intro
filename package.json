@@ -15,5 +15,39 @@
   "bugs": {
     "url": "https://github.com/qiangran/react-redux-intro/issues"
   },
-  "homepage": "https://github.com/qiangran/react-redux-intro#readme"
+  "homepage": "https://github.com/qiangran/react-redux-intro#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.4",
+    "cssnano": "^3.10.0",
+    "expose-loader": "^0.7.3",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
+    "nodemon": "^1.17.5",
+    "node-sass": "^4.11.0",
+    "normalize.css": "^7.0.0",
+    "babel-loader": "8.0.0-beta.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-runtime": "^6.26.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.4",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "es5-shim": "^4.5.10",
+    "es6-shim": "^0.35.3",
+    "es6-weak-map": "^2.0.2",
+    "react-fastclick": "^3.0.2",
+    "amfe-flexible": "^2.2.1",
+    "postcss-px-to-viewport": "^1.1.0",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+
 }
