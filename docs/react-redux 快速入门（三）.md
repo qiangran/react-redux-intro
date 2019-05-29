@@ -86,7 +86,7 @@ function fetchAmount() {
 requestPost(){
 	return{
 		type: REQUEST_POSTS,
-		isFetch:true //精度条相关
+		isFetch:true //进度条相关
 	}
 }
 

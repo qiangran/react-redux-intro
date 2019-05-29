@@ -3,7 +3,7 @@
 先熟悉两个方法(大概浏览下即可，根据后面的例子对照学习)
 bindActionCreator(actionCreators, dispatch)
 --------------------------------
-使用dispatch将一个action creator（action创建函数），或者一个 value 是 action creator 的对象进行包装，以便可以在react组件里面直接调用他们。
+使用dispatch将一个action creator（action创建函数,前面有提到），或者一个 value 是 action creator 的对象进行包装，以便可以在react组件里面直接调用他们。
 #### **入参**
 1. actionCreators :Function | Object
 2. dispatch: Function。
